@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 05 Report</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 40px;">
+    <h1>Lab 05: Code Implementation Report</h1>
+    <p><a href="dashboard.html">Back to Lab 05 Dashboard</a></p>
+    <hr>
+
+    <h2>1. Introduction</h2>
+    <p>This lab requires us to implement Customer Registration from the customer table, order placement to the order table and implement the logic of catalog. </p>
+
+    <h2>2. Implementation Details</h2>
+    <p>The project consists of the following ASP.NET Web Forms:</p>
+    <ul>
+        <li><strong>Login.aspx:</strong> The entry point of the application. Provides a login form with username and
+            password fields. Validates credentials against the database and creates a session for authenticated users.
+        </li>
+        <li><strong>UserRegistration.aspx:</strong> A registration form for new customers. Data is inserted into the CUSTOMER_T table.</li>
+        <li><strong>Products.aspx:</strong> Displays products using a Repeater control. Includes search functionality
+            with partial match support. Allows users to place orders directly from the product listing.</li>
+        <li><strong>Orders.aspx:</strong> An order placement form that captures delivery details (contact, address,
+            postal code). Automatically associates orders with the logged-in customer.</li>
+        <li><strong>Catalog.aspx:</strong> An admin-only page for managing the product catalog. Visibility is controlled
+            via role-based access using ASP.NET Panel controls.</li>
+        <li><strong>Payment.aspx:</strong> A payment processing page for completing transactions.</li>
+        <li><strong>HelpPage.aspx:</strong> Provides user guidance and help documentation.</li>
+    </ul>
+
+    <h2>3. Design Decisions</h2>
+    <p>The application is built using ASP.NET Web Forms with VB.NET code-behind files. A shared
+        <code>stylesheet.css</code> provides consistent styling across all pages. Navigation is implemented using a
+        consistent navbar with ASP.NET HyperLink controls. Session variables are used for authentication, storing the
+        logged-in user's name and role. The Catalog page uses an ASP.NET Panel with conditional visibility to restrict
+        access to admin users only. The logout
+        functionality clears the session and redirects to the login page.
+    </p>
+
+</body>
+
+</html>

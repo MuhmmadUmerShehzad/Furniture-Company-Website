@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog — Pine Valley Furniture</title>
+    <meta name="description" content="Manage the Pine Valley Furniture product catalog — add and update products.">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .content {
+            max-width: 500px;
+        }
+
+        .field-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--clr-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .field-group {
+            margin-bottom: 16px;
+        }
+
+        .catalog-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 28px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="site-title">Pine Valley Furniture</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="Catalog.html" class="active">Catalog</a></li>
+            <li><a href="Order.html">Order</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="helpPage.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="page-label">Update Catalog</div>
+
+        <div class="field-group">
+            <label class="field-label" for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="e.g. Oak Dining Table">
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="description">Description</label>
+            <input type="text" id="description" placeholder="Brief product description">
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="price">Price ($)</label>
+            <input type="number" id="price" placeholder="0.00">
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="quantity">Quantity</label>
+            <input type="number" id="quantity" placeholder="0">
+        </div>
+
+        <div class="catalog-actions">
+            <button id="addProductBtn">Add Product</button>
+            <a href="helpPage.html" class="help" style="margin-top:0;">Need help?</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

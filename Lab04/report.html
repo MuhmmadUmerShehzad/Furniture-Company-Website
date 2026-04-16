@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 04 Report</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 40px;">
+    <h1>Lab 04: Code Implementation Report</h1>
+    <p><a href="dashboard.html">Back to Lab 04 Dashboard</a></p>
+    <hr>
+
+    <h2>1. Introduction</h2>
+    <p>This lab involves converting the Pine Valley Furniture Company HTML prototypes into dynamic ASP.NET Web Forms
+        using VB.NET. The solution implements server-side logic including user authentication, session management,
+        role-based access control, database connectivity via ADO.NET, and the ASP.NET Page Life Cycle demonstration.</p>
+
+    <h2>2. Implementation Details</h2>
+    <p>The project consists of the following ASP.NET Web Forms:</p>
+    <ul>
+        <li><strong>Login.aspx:</strong> The entry point of the application. Provides a login form with username and
+            password fields. Validates credentials against the database and creates a session for authenticated users.
+        </li>
+        <li><strong>UserRegistration.aspx:</strong> A registration form for new customers, collecting details such as
+            name, password, address, and contact information. Data is inserted into the CUSTOMER_T table.</li>
+        <li><strong>Products.aspx:</strong> Displays products using a Repeater control. Includes search functionality
+            with partial match support. Allows users to place orders directly from the product listing.</li>
+        <li><strong>Orders.aspx:</strong> An order placement form that captures delivery details (contact, address,
+            postal code). Automatically associates orders with the logged-in customer.</li>
+        <li><strong>Catalog.aspx:</strong> An admin-only page for managing the product catalog. Visibility is controlled
+            via role-based access using ASP.NET Panel controls.</li>
+        <li><strong>Payment.aspx:</strong> A payment processing page for completing transactions.</li>
+        <li><strong>HelpPage.aspx:</strong> Provides user guidance and help documentation.</li>
+        <li><strong>PageLifeCycle.aspx:</strong> Demonstrates the ASP.NET Page Life Cycle by logging key events
+            (PreInit, Load, PreRender, Unload) and displaying their execution order.</li>
+    </ul>
+
+    <h2>3. Design Decisions</h2>
+    <p>The application is built using ASP.NET Web Forms with VB.NET code-behind files. A shared
+        <code>stylesheet.css</code> provides consistent styling across all pages. Navigation is implemented using a
+        consistent navbar with ASP.NET HyperLink controls. Session variables are used for authentication, storing the
+        logged-in user's name and role. The Catalog page uses an ASP.NET Panel with conditional visibility to restrict
+        access to admin users only. Database operations use ADO.NET with parameterized queries for security. The logout
+        functionality clears the session and redirects to the login page.
+    </p>
+
+</body>
+
+</html>

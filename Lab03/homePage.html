@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .homeBox {
+            margin-top: 20px;
+            font-weight: bold;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border-radius: 20px;
+            width: 60vw;
+            margin-bottom: 3vh;
+        }
+
+        .department_info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            width: 60vw;
+        }
+
+        .dept_card {
+            width: 30%;
+            margin-top: 2vh;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .dept_card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .dept_card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .dept_card,
+        .about-section p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            width: 60vw;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .info-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: 60vw;
+        }
+
+        .info-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .info-section p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            width: 25%;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .contact-item span {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- the header of the page is here header -->
+    <header>
+        <h1>HospitalDB</h1>
+        <p>Your Health, Our Priority</p>
+    </header>
+
+    <!-- the navbar of the page is here -->
+    <nav>
+        <ul>
+            <li><a href="homePage.html" class="active">Home</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="employees.html">Our Doctors</a></li>
+            <li><a href="Appointments.html">Book Appointment</a></li>
+            <li><a href="pat_reg.html">Register</a></li>
+            <li><a href="login.html">Staff Login</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- main container is here -->
+    <div class="main_container">
+        <div class="homeBox">
+            <h2 style="font-size: 40px">Welcome to our Hospital</h2>
+            <p>Providing Quality Healthcare Services with Compassion and Excellence</p>
+            <a href="Appointments.html" class="btn btn-success">Book Appointment</a>
+            <a href="Appointments.html" class="btn btn-primary">Register Patient</a>
+        </div>
+
+        <!-- this is the grid for departments  -->
+        <h2 style="color: #2c3e50; margin-bottom: 25px;">Our Departments</h2>
+        <div class="department_info">
+            <div class="dept_card">
+                <h3>Department_Name</h3>
+                <div class="info">
+                    <p>Department Info</p>
+                </div>
+            </div>
+            <div class="dept_card">
+                <h3>Department_Name</h3>
+                <div class="info">
+                    <p>Department Info</p>
+                </div>
+            </div>
+            <div class="dept_card">
+                <h3>Department_Name</h3>
+                <div class="info">
+                    <p>Department Info</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- This part is for the about -->
+        <div class="about-section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; border-bottom: 3px solid #3498db;">About Hospital</h2>
+            <p>
+                HospitalDB is committed to providing exceptional healthcare services to our community.
+                With state-of-the-art facilities and a team of experienced medical professionals, we offer
+                comprehensive care across multiple specialties. Our patient-centered approach ensures that
+                every individual receives personalized attention and the highest quality treatment.
+            </p>
+        </div>
+
+        <!-- this part is for contact -->
+        <div class="info-section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Emergency</strong>
+                    <span>911 / 24/7 Available</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Appointments</strong>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <span>info@hospitaldb.com</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Hours</strong>
+                    <span>Mon-Fri: 8AM - 8PM<br>Sat-Sun: 9AM - 5PM</span>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 HospitalDB. All Rights Reserved. | Providing Quality Healthcare Since 2000</p>
+        </footer>
+
+        <h3><a href="dashboard.html">Back to lab dashboard</a></h3>
+    </div>
+</body>
+
+</html>

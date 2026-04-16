@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order — Pine Valley Furniture</title>
+    <meta name="description" content="Place your Pine Valley Furniture order with delivery details.">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .content {
+            max-width: 500px;
+        }
+
+        .field-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--clr-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .field-group {
+            margin-bottom: 16px;
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 28px;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--clr-bg);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            color: var(--clr-accent);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="site-title">Pine Valley Furniture</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="Catalog.html">Catalog</a></li>
+            <li><a href="Order.html" class="active">Order</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="helpPage.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="page-label">Place Your Order</div>
+
+        <div class="product-badge">Selected: Product Name</div>
+
+        <div class="field-group">
+            <label class="field-label" for="contactNo">Contact Number</label>
+            <input type="text" id="contactNo" placeholder="+1 (555) 000-0000">
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="address">Delivery Address</label>
+            <input type="text" id="address" placeholder="Street address">
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="postal">Postal Code</label>
+            <input type="text" id="postal" placeholder="e.g. 10001">
+        </div>
+
+        <div class="order-actions">
+            <button id="orderBtn">Confirm Order</button>
+            <a href="helpPage.html" class="help" style="margin-top:0;">Need help?</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

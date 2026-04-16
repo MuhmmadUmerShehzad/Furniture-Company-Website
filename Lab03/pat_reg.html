@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .new-emp-form {
+            margin-top: 5vh;
+            width: 60vw;
+            padding: 20px 10px;
+            background-color: white;
+            margin-bottom: 2vh;
+        }
+
+        .patient-search {
+            display: flex;
+            width: 60vw;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HospitalDB</h1>
+        <p>Register a Patient</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="homePage.html">Home</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="employees.html">Our Doctors</a></li>
+            <li><a href="Appointments.html">Book Appointment</a></li>
+            <li><a href="pat_reg.html" class="active">Register</a></li>
+            <li><a href="login.html">Staff Login</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <!-- box for patient register  -->
+    <!-- book new appointment  -->
+    <div class="main_container">
+        <!-- search for current patients -->
+        <div class="patient-search">
+            <h2>Search for Patients</h2>
+            <input style="width: 40%;" type="number" placeholder="Enter your patient ID" required>
+        </div>
+
+        <div class="new-emp-form">
+            <h2>Register a Patient</h2>
+            <div class="form-group">
+                <label for="">Patient ID*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <div class="form-group">
+                <label for="">Select Doctor*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <div class="form-group">
+                <label for="">Appointment Date*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <div class="form-group">
+                <label for="">Reason for Visit*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <button class="btn-success">Add Employee</button>
+            <button class="btn-danger">Clear Form</button>
+            <button class="btn-primary">Cancel</button>
+        </div>
+
+
+</body>
+
+</html>

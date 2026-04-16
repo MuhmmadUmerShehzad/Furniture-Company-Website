@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 06 Report</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 40px;">
+    <h1>Lab 06: Code Implementation Report</h1>
+    <p><a href="dashboard.html">Back to Lab 06 Dashboard</a></p>
+    <hr>
+
+    <h2>1. Introduction</h2>
+    <p>This lab involves implementing a Role-Based Access Control (RBAC) mechanism for the Pine Valley Furniture
+        Company. The goal is to enhance the existing database schema to include authentication details and user roles,
+        and update previous web forms to conditionally grant access based on whether the logged-in user is an
+        administrator or a regular customer.</p>
+
+    <h2>2. Implementation Details</h2>
+    <p>The project consists of the following ASP.NET Web Forms:</p>
+    <ul>
+        <li><strong>Login.aspx:</strong> The entry point of the application. Validates credentials against the updated
+            database schema using parameterized queries to prevent SQL injection. Creates a session saving `Customer_Id`
+            and `User_Role`.</li>
+        <li><strong>UserRegsistration.aspx:</strong> Enhanced to support role-based features. Administrators can update
+            any Customer ID, whereas regular users are strictly bound to update only their own information based on
+            their active session.</li>
+        <li><strong>Products.aspx:</strong> Displays products and allows users to search or place orders. Access to the
+            Catalog management link is restricted to administrators.</li>
+        <li><strong>Orders.aspx:</strong> Captures delivery details and places orders bound to the currently
+            authenticated user session.</li>
+        <li><strong>Catalog.aspx:</strong> An admin-only interface protected by session evaluation preventing
+            unauthorized access.</li>
+        <li><strong>Payment.aspx:</strong> Payment completion placeholder.</li>
+        <li><strong>HelpPage.aspx:</strong> Provides user guidance.</li>
+    </ul>
+
+    <h2>3. Design Decisions & Security Fixes</h2>
+    <p>The application employs robust session testing (e.g., verifying `Session("User_Role") = "admin"`) across
+        `Page_Load` events to limit components like administrative panels. Database queries were restructured to use
+        correct configurations (via `Web.config`) and parameterized SQL Commands correctly aligned with the `Users`
+        table schema, thereby completely resolving previous build errors, null exception drops, and credential bypass
+        issues.
+    </p>
+
+</body>
+
+</html>
