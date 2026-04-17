@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help — Pine Valley Furniture</title>
+    <meta name="description" content="Help and page definitions for the Pine Valley Furniture web application.">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .content {
+            max-width: 720px;
+        }
+
+        .help-section {
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            background: var(--clr-bg);
+            transition: box-shadow var(--transition);
+        }
+
+        .help-section:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .help-section h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--clr-accent);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .help-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--clr-accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .help-section p {
+            font-size: 0.9rem;
+            color: var(--clr-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .section-divider {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            color: var(--clr-muted);
+            margin: 24px 0 16px;
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="site-title">Pine Valley Furniture</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="Catalog.html">Catalog</a></li>
+            <li><a href="Order.html">Order</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="helpPage.html" class="active">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="page-label">Help &amp; Page Definitions</div>
+
+        <p class="section-divider">Pages Overview</p>
+
+        <div class="help-section">
+            <h3>Login</h3>
+            <p>Allows existing users to authenticate and access their account using their registered credentials.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>Registration</h3>
+            <p>Enables new users to create an account by providing required personal and account information.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>Products</h3>
+            <p>Displays available furniture items with descriptions and options to place an order directly.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>Catalog</h3>
+            <p>Provides a comprehensive listing of all furniture products and allows admins to add new items.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>Order</h3>
+            <p>Manages and captures delivery details for a selected product to complete a purchase.</p>
+        </div>
+
+        <div class="help-section">
+            <h3>Payment</h3>
+            <p>Handles payment processing and collection of billing information for customer purchases.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

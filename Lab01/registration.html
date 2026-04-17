@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — Pine Valley Furniture</title>
+    <meta name="description" content="Create a new Pine Valley Furniture account to start shopping.">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .content {
+            max-width: 560px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .content .form-group+.form-group {
+            margin-top: 12px;
+        }
+
+        .register-actions {
+            margin-top: 28px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="site-title">Pine Valley Furniture</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html" class="active">Registration</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="Catalog.html">Catalog</a></li>
+            <li><a href="Order.html">Order</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="helpPage.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="page-label">Register New Customer</div>
+
+        <div class="form-group">
+            <input type="text" id="fullName" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+            <input type="text" id="address" placeholder="Address">
+        </div>
+        <div class="two-col">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="state" placeholder="State">
+        </div>
+        <div class="form-group">
+            <input type="text" id="postal" placeholder="Postal Code">
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        </div>
+
+        <div class="register-actions">
+            <button id="registerBtn">Register</button>
+            <a href="helpPage.html" class="help" style="margin-top:0;">Need help?</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

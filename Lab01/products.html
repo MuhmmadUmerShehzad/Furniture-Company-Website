@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products — Pine Valley Furniture</title>
+    <meta name="description" content="Browse all Pine Valley Furniture products — chairs, tables, and more.">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .content {
+            max-width: 960px;
+        }
+
+        .search-bar {
+            margin-bottom: 32px;
+        }
+
+        .search-bar input {
+            max-width: 360px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--clr-bg);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: box-shadow var(--transition), transform var(--transition);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .product-card .product-img {
+            width: 100%;
+            height: 160px;
+            background: var(--clr-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+
+        .product-card .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-card .product-info {
+            padding: 14px;
+        }
+
+        .product-card .product-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--clr-primary);
+            margin-bottom: 10px;
+        }
+
+        .product-card button {
+            width: 100%;
+            padding: 9px 12px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="site-title">Pine Valley Furniture</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="Catalog.html">Catalog</a></li>
+            <li><a href="Order.html">Order</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="helpPage.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="page-label">Our Products</div>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 1</div>
+                    <button id="orderBtn1" onclick="window.location.href='Order.html'">Order Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="" alt="Product 2">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 2</div>
+                    <button id="orderBtn2" onclick="window.location.href='Order.html'">Order Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="" alt="Product 3">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 3</div>
+                    <button id="orderBtn3" onclick="window.location.href='Order.html'">Order Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="" alt="Product 4">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 4</div>
+                    <button id="orderBtn4" onclick="window.location.href='Order.html'">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <a href="helpPage.html" class="help">Need help?</a>
+    </div>
+
+</body>
+
+</html>

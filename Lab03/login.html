@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .new-emp-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            border-radius: 5px;
+            margin-top: 5vh;
+            padding: 20px 10px;
+            background-color: white;
+            margin-bottom: 2vh;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .roles {
+            margin-top: 1vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 80%;
+        }
+
+        .roles label {
+            display: flex;
+            margin: 0 10px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .roles input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-group {
+            padding: 10px;
+            margin-top: 1vh;
+        }
+
+        .form-group input {
+            width: 15vw;
+        }
+
+        .form-group label {
+            margin-top: 1vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HospitalDB</h1>
+        <p>Login Page for Staff</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="homePage.html">Home</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="employees.html">Our Doctors</a></li>
+            <li><a href="Appointments.html">Book Appointment</a></li>
+            <li><a href="pat_reg.html">Register</a></li>
+            <li><a href="login.html" class="active">Staff Login</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="main_container">
+
+        <div class="new-emp-form">
+            <h2>Login Page</h2>
+            <p><strong>Select Role:</strong></p>
+            <div class="roles">
+                <label><input type="radio" name="role" value="dba" checked> DBA</label>
+                <label><input type="radio" name="role" value="hr"> HR</label>
+                <label><input type="radio" name="role" value="doctor"> Doctor</label>
+                <label><input type="radio" name="role" value="frontdesk"> Front Desk</label>
+                <label><input type="radio" name="role" value="equipment"> Equipment</label>
+            </div>
+
+            <form action="index.html">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" required>
+                </div>
+
+                <button style="width: 15vw;" type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <footer style="margin-top: 2vh;">
+                <p>&copy; 2026 Hospital Login</p>
+            </footer>
+        </div>
+
+        <h3><a href="dashboard.html">Back to lab dashboard</a></h3>
+    </div>
+
+</body>
+
+</html>

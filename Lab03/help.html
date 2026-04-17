@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - HospitalDB</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .help-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .help-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .help-section h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .help-section p,
+        .help-section li {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .help-section ul {
+            margin-left: 20px;
+        }
+
+        .help-section ol {
+            margin-left: 20px;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+
+        .faq-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            margin: 5px 0;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>HospitalDB</h1>
+        <p>Your Health, Our Priority</p>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="homePage.html">Home</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="employees.html">Our Doctors</a></li>
+            <li><a href="Appointments.html">Book Appointment</a></li>
+            <li><a href="pat_reg.html">Register</a></li>
+            <li><a href="login.html">Staff Login</a></li>
+            <li><a href="help.html" class="active">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main_container">
+        <div class="help-container">
+            <h1 style="color: #2c3e50; margin-bottom: 30px;">Help & User Guide</h1>
+
+            <!-- Getting Started Section -->
+            <div class="help-section">
+                <h2>Getting Started</h2>
+                <p>Welcome to Hospital Website! This guide will help you navigate through our hospital management system and
+                    make the most of its features.</p>
+                <h3>Navigation</h3>
+                <ul>
+                    <li><strong>Home:</strong> View hospital overview, departments, and contact information</li>
+                    <li><strong>Departments:</strong> Browse all hospital departments and their services</li>
+                    <li><strong>Our Doctors:</strong> View information about our medical staff and specialists</li>
+                    <li><strong>Book Appointment:</strong> Schedule appointments with doctors</li>
+                    <li><strong>Register:</strong> Register as a new patient in our system</li>
+                    <li><strong>Staff Login:</strong> Access portal for hospital staff members</li>
+                </ul>
+            </div>
+
+            <!-- Patient Registration Section -->
+            <div class="help-section">
+                <h2>Patient Registration</h2>
+                <p>To register as a new patient, follow these steps:</p>
+                <ol>
+                    <li>Click on the <strong>"Register"</strong> link in the navigation menu</li>
+                    <li>Fill in all required fields including:
+                        <ul>
+                            <li>Full Name</li>
+                            <li>Date of Birth</li>
+                            <li>Contact Information (Phone & Email)</li>
+                            <li>Address</li>
+                            <li>Emergency Contact Details</li>
+                        </ul>
+                    </li>
+                    <li>Review your information for accuracy</li>
+                    <li>Click the <strong>"Submit"</strong> button to complete registration</li>
+                    <li>You will receive a patient ID for future appointments</li>
+                </ol>
+            </div>
+
+            <!-- Booking Appointments Section -->
+            <div class="help-section">
+                <h2>Booking Appointments</h2>
+                <p>To book an appointment with a doctor:</p>
+                <ol>
+                    <li>Navigate to the <strong>"Book Appointment"</strong> page</li>
+                    <li>Select your preferred department</li>
+                    <li>Choose a doctor from the available specialists</li>
+                    <li>Select a date and time slot</li>
+                    <li>Provide your patient ID or contact information</li>
+                    <li>Add any special notes or reasons for visit</li>
+                    <li>Submit your appointment request</li>
+                </ol>
+            </div>
+
+            <!-- Staff Login Section -->
+            <div class="help-section">
+                <h2>Staff Login</h2>
+                <p>Hospital staff members can access the system using their credentials:</p>
+                <ol>
+                    <li>Click on <strong>"Staff Login"</strong> in the navigation menu</li>
+                    <li>Enter your staff username or employee ID</li>
+                    <li>Enter your password</li>
+                    <li>Click <strong>"Login"</strong> to access the staff portal</li>
+                </ol>
+                <p><strong>Forgot Password?</strong> Contact the IT department at ext. 5555 for password reset.</p>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="help-section">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+
+                <div class="faq-item">
+                    <strong>Q: How do I cancel or reschedule an appointment?</strong>
+                    <p>A: Please call our appointments desk at +1 (555) 123-4567 at least 24 hours before your
+                        scheduled appointment to cancel or reschedule.</p>
+                </div>
+
+                <div class="faq-item">
+                    <strong>Q: What should I bring to my first appointment?</strong>
+                    <p>A: Please bring a valid ID, insurance card (if applicable), list of current medications, and any
+                        relevant medical records from previous healthcare providers.</p>
+                </div>
+
+                <div class="faq-item">
+                    <strong>Q: Are walk-in appointments available?</strong>
+                    <p>A: Walk-in appointments are available for urgent care during business hours. However, we
+                        recommend booking appointments in advance to minimize wait times.</p>
+                </div>
+
+                <div class="faq-item">
+                    <strong>Q: How can I access my medical records?</strong>
+                    <p>A: Registered patients can request their medical records by contacting the medical records
+                        department. Staff members can access patient records through the staff portal.</p>
+                </div>
+
+                <div class="faq-item">
+                    <strong>Q: What are the hospital visiting hours?</strong>
+                    <p>A: General visiting hours are Monday-Friday: 8AM - 8PM, and Saturday-Sunday: 9AM - 5PM. ICU and
+                        special care units may have different visiting hours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <strong>Q: Do you accept insurance?</strong>
+                    <p>A: We accept most major insurance plans. Please contact our billing department to verify if your
+                        specific insurance is accepted.</p>
+                </div>
+            </div>
+
+            <!-- Contact Support Section -->
+            <div class="help-section">
+                <div class="contact-box">
+                    <h3>Need More Help?</h3>
+                    <p><strong>Emergency:</strong> 911 (24/7 Available)</p>
+                    <p><strong>Appointments:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Email:</strong> info@hospitaldb.com</p>
+                    <p><strong>IT Support:</strong> ext. 5555</p>
+                    <p style="margin-top: 15px;">Our support team is available Monday-Friday, 8AM - 6PM</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 HospitalDB. All Rights Reserved. | Providing Quality Healthcare Since 2000</p>
+        </footer>
+    </div>
+</body>
+
+</html>

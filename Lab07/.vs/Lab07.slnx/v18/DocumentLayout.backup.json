@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Coding\\IAD\\Lab07\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|D:\\Coding\\IAD\\Lab07\\customersegmentation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|solutionrelative:customersegmentation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|D:\\Coding\\IAD\\Lab07\\customersegmentation.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|solutionrelative:customersegmentation.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|d:\\coding\\iad\\lab07\\orders.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|solutionrelative:orders.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|D:\\Coding\\IAD\\Lab07\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|D:\\Coding\\IAD\\Lab07\\orders.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|solutionrelative:orders.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|D:\\Coding\\IAD\\Lab07\\products.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{860D4AFF-882C-28A0-7543-0AE70153C0BA}|D:\\Coding\\IAD\\Lab07|solutionrelative:products.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerSegmentation.aspx.vb",
+              "DocumentMoniker": "D:\\Coding\\IAD\\Lab07\\CustomerSegmentation.aspx.vb",
+              "RelativeDocumentMoniker": "CustomerSegmentation.aspx.vb",
+              "ToolTip": "D:\\Coding\\IAD\\Lab07\\CustomerSegmentation.aspx.vb",
+              "RelativeToolTip": "CustomerSegmentation.aspx.vb",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwCoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-16T06:25:05.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Orders.aspx.vb",
+              "DocumentMoniker": "D:\\Coding\\IAD\\Lab07\\Orders.aspx.vb",
+              "RelativeDocumentMoniker": "Orders.aspx.vb",
+              "ToolTip": "D:\\Coding\\IAD\\Lab07\\Orders.aspx.vb",
+              "RelativeToolTip": "Orders.aspx.vb",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAcwG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-15T17:17:47.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "D:\\Coding\\IAD\\Lab07\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "D:\\Coding\\IAD\\Lab07\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-15T17:04:23.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerSegmentation.aspx",
+              "DocumentMoniker": "D:\\Coding\\IAD\\Lab07\\CustomerSegmentation.aspx",
+              "RelativeDocumentMoniker": "CustomerSegmentation.aspx",
+              "ToolTip": "D:\\Coding\\IAD\\Lab07\\CustomerSegmentation.aspx",
+              "RelativeToolTip": "CustomerSegmentation.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-16T06:25:05.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Products.aspx.vb",
+              "DocumentMoniker": "D:\\Coding\\IAD\\Lab07\\Products.aspx.vb",
+              "RelativeDocumentMoniker": "Products.aspx.vb",
+              "ToolTip": "D:\\Coding\\IAD\\Lab07\\Products.aspx.vb",
+              "RelativeToolTip": "Products.aspx.vb",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-15T17:28:34.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Orders.aspx",
+              "DocumentMoniker": "D:\\Coding\\IAD\\Lab07\\Orders.aspx",
+              "RelativeDocumentMoniker": "Orders.aspx",
+              "ToolTip": "D:\\Coding\\IAD\\Lab07\\Orders.aspx",
+              "RelativeToolTip": "Orders.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-16T04:36:23.009Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

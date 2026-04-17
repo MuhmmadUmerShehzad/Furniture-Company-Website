@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .top-section {
+            display: flex;
+            width: 60vw;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .emp_card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 30%;
+        }
+
+        .emp_card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .employee-info {
+            margin-top: 5vh;
+            display: flex;
+            width: 60vw;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .emp_card h2 {
+            margin-bottom: 30px;
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .emp_card p {
+            margin: 8px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .emp_card p strong {
+            color: #2c3e50;
+            display: inline-block;
+            width: 120px;
+        }
+
+        .emp_card .designation {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .btn-success {
+            margin-top: 5vh;
+            border: none;
+            padding: 8px 10px;
+        }
+
+        .new-emp-form {
+            margin-top: 5vh;
+            width: 60vw;
+            padding: 20px 10px;
+            background-color: white;
+            margin-bottom: 2vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HospitalDB</h1>
+        <p>Employee Details Page</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="homePage.html">Home</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="employees.html" class="active">Our Doctors</a></li>
+            <li><a href="Appointments.html">Book Appointment</a></li>
+            <li><a href="pat_reg.html">Register</a></li>
+            <li><a href="login.html">Staff Login</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="main_container">
+        <div class="top-section">
+            <h2 style="color: #2c3e50; margin-bottom: 25px; margin-top: 2vh;">Employees</h2>
+            <!-- button to add employees -->
+            <button class="btn-success">Add Employee +</button>
+        </div>
+
+        <!-- cards for the employee -->
+        <div class="employee-info">
+            <div class="emp_card">
+                <h2>Employee</h2>
+                <p><strong>Employee ID</strong> IdNumber</p>
+                <p><strong>Department</strong> Department_ID</p>
+                <p><strong>Date Of birth</strong>Date of Birth</p>
+                <span class="designation">JOB</span>
+            </div>
+            <div class="emp_card">
+                <h2>Employee</h2>
+                <p><strong>Employee ID</strong> IdNumber</p>
+                <p><strong>Department</strong> Department_ID</p>
+                <p><strong>Date Of birth</strong>Date of Birth</p>
+                <span class="designation">JOB</span>
+            </div>
+            <div class="emp_card">
+                <h2>Employee</h2>
+                <p><strong>Employee ID</strong> IdNumber</p>
+                <p><strong>Department</strong> Department_ID</p>
+                <p><strong>Date Of birth</strong>Date of Birth</p>
+                <span class="designation">JOB</span>
+            </div>
+        </div>
+
+
+
+        <!-- form to add a new employee -->
+        <div class="new-emp-form">
+            <h2>Add New Employees</h2>
+            <div class="form-group">
+                <label for="">Employee ID*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <div class="form-group">
+                <label for="">Employee ID*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <div class="form-group">
+                <label for="">Employee ID*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <div class="form-group">
+                <label for="">Employee ID*</label>
+                <input type="number" placeholder="Enter employee ID" required>
+            </div>
+            <button class="btn-success">Add Employee</button>
+            <button class="btn-danger">Clear Form</button>
+        </div>
+        <footer>
+            <p>&copy; 2026 HospitalDB. All Rights Reserved. | Providing Quality Healthcare Since 2000</p>
+        </footer>
+    </div>
+</body>
+
+</html>

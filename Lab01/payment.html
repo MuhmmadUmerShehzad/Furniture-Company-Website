@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-top: 10px;
+        }
+
+        .help {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 4px 8px;
+            background-color: lightgray;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pine Valley Furniture</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="Catalog.html">Catalog</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="helpPage.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h3>Payment</h3>
+
+        <label>Payment Method</label>
+        <select>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Sadapay">Sadapay</option>
+        </select><br>
+
+        <label>Card Number</label>
+        <input type="text"><br>
+
+        <label>CVV</label>
+        <input type="text"><br>
+
+        <button>Proceed</button><br>
+
+        <a href="helpPage.html" class="help">helpPage</a>
+    </div>
+
+</body>
+
+</html>
