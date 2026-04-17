@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 07 Report</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 40px;">
+    <h1>Lab 07: Code Implementation Report</h1>
+    <p><a href="dashboard.html">Back to Lab 07 Dashboard</a></p>
+    <hr>
+
+    <h2>1. Introduction</h2>
+    <p>This lab involves implementing a Customer Segmentation functionality and its associated user interface elements for the Pine Valley Furniture Company. The goal is to provide administrators with an intuitive interface to view and manage customer metrics effectively, building upon previous role-based access mechanisms.</p>
+
+    <h2>2. Implementation Details</h2>
+    <p>The project included the following major updates:</p>
+    <ul>
+        <li><strong>CustomerSegmentation.aspx:</strong> Created a dedicated interface to display and categorize customers using sorting and demographic metrics. Includes robust database integration and code-behind interaction.</li>
+        <li><strong>Navigation Links:</strong> Updated the navigation menus across all relevant files (`UserRegistration.aspx`, `Products.aspx`, `Orders.aspx`, `Payment.aspx`, and `Catalog.aspx`) to include the Customer Segmentation link.</li>
+        <li><strong>Role-Based Access:</strong> Ensured that access to the Segmentation interface is strictly tied to administrative login sessions through `Session("User_Role")`. Regular users are actively blocked from visiting or seeing the URL.</li>
+    </ul>
+
+    <h2>3. Design Decisions & Security</h2>
+    <p>We maintained a responsive and consistent design across the platform, utilizing the project's CSS files. Security tests confirmed that direct URL navigation bypass scenarios are prevented. The database queries remain parameterized referencing the central database via `Web.config`.
+    </p>
+
+</body>
+
+</html>

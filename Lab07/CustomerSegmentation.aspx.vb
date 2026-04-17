@@ -81,7 +81,6 @@ Partial Class CustomerSegmentation
         End If
     End Sub
 
-    ' ────────────────────────────────────────────────
     Private Sub LoadFrequentCustomers(threshold As Integer)
 
         Dim sql As String =
