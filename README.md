@@ -1,4 +1,4 @@
-# 🛋️ PVFC Furniture - Order Management System
+# PVFC Furniture - Order Management System
 
 ![ASP.NET](https://img.shields.io/badge/ASP.NET-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white)
 ![VB.NET](https://img.shields.io/badge/VB.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
@@ -8,7 +8,7 @@ A full-featured **e-commerce order management system** with intelligent **Custom
 
 ---
 
-## ✨ Project Highlights
+## Project Highlights
 
 - Secure user authentication (Admin + Customer)
 - Real-time order placement with live price calculation
@@ -19,21 +19,21 @@ A full-featured **e-commerce order management system** with intelligent **Custom
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-### 👤 User Features
+### User Features
 - Browse products and place orders
 - Real-time total price calculation
 - Personalized order confirmation messages
 
-### 🔍 Business Intelligence Features
+### Business Intelligence Features
 - **Premium Customers** → High-value spenders (Complimentary Gift)
 - **Frequent Customers** → Loyal repeat buyers
 - **Bulk Buyers** → High quantity purchasers
 - Live segmentation with custom thresholds
 - Empty segment handling with friendly messages
 
-### 🛠️ Admin Features
+### Admin Features
 - Full customer segmentation dashboard
 - Adjustable thresholds for all segments
 - Total customer statistics
@@ -41,7 +41,7 @@ A full-featured **e-commerce order management system** with intelligent **Custom
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Technology          | Purpose                        |
 |---------------------|--------------------------------|
@@ -67,7 +67,7 @@ A full-featured **e-commerce order management system** with intelligent **Custom
 
 ---
 
-## 📌 Project Structure
+## Project Structure
 
 ```
 PVFC-Furniture/
@@ -83,13 +83,13 @@ PVFC-Furniture/
 
 ---
 
-## 👨‍💻 Developed By
+## Developed By
 
-**Umer Shehzad**  
+❤️ **Umer Shehzad**  
 *Internet Application Development Lab Project*
 
 ---
 
-## 📄 License
+## License
 
 This project is developed for educational purposes.
