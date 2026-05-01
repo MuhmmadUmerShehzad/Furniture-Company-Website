@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "z5kvGXNa3V8=",
+  "success": false,
+  "projectFilePath": "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages",
+      "projectPath": "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
+      "filePath": "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
+      "libraryId": "Microsoft.AspNetCore.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
