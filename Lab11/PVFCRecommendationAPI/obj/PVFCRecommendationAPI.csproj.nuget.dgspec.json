@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj": {}
+    "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj": {
+    "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
+        "projectUniqueName": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
         "projectName": "PVFCRecommendationAPI",
-        "projectPath": "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
+        "projectPath": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\PVFCRecommendationAPI\\PVFCRecommendationAPI.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\IAD\\Lab11\\PVFCRecommendationAPI\\obj\\",
+        "outputPath": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\PVFCRecommendationAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25,7 +25,8 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
@@ -52,6 +53,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.7, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             }
           },
           "imports": [
