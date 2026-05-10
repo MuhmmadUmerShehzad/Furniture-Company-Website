@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Problem Statement - Lab 11</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6;">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h1>Internet Application Development</h1>
+        <h2>Lab 11</h2>
+        <p><strong>Topic:</strong> Recommendation System and Business Intelligence</p>
+    </div>
+
+    <p><a href="dashboard.html">&larr; Back to Dashboard</a></p>
+    <hr>
+
+    <h3>Problem Statement</h3>
+    <p>
+        <b>Problem 1)</b> Refer to Lab 1 (Problem 2), you have to incorporate business intelligence in your PVFC order processing system by adding a recommendation system.
+    </p>
+
+    <h4>Recommendation System</h4>
+    <p>
+        A recommendation system for an order processing system analyzes historical order data, user behavior, and item characteristics to predict and suggest products that a customer is likely to purchase next.
+    </p>
+    <p>
+        These systems:
+        <ul>
+            <li>(i) Improve customer experience</li>
+            <li>(ii) Increase Average Order Value (AOV) by identifying purchasing patterns and offering personalized recommendations.</li>
+        </ul>
+    </p>
+
+    <h4>Recommendation Techniques</h4>
+    <ul>
+        <li>
+            <b>Collaborative Filtering (CF):</b> Recommends items based on similar user behavior. If user A and B have similar order histories, the system suggests items purchased by B to user A.
+        </li>
+        <li>
+            <b>Content-Based Filtering:</b> Suggests items similar to those a user has already purchased or viewed, based on item attributes (e.g., category, brand, or price).
+        </li>
+        <li>
+            <b>Hybrid Systems:</b> Combines collaborative and content-based filtering to overcome limitations like the "cold start" problem (new users/items with no history).
+        </li>
+        <li>
+            <b>Association Rule Mining:</b> Identifies items frequently bought together, ideal for "frequently bought together" bundles or upselling complementary items.
+        </li>
+    </ul>
+
+    <p><b>Assumption:</b> Sufficient numbers of orders are present in database.</p>
+
+    <h4>Functionalities to be added</h4>
+    <ol>
+        <li>
+            Display recommendation messages during Product Selection and Order Placement: <i>"Customers who bought this also bought..."</i>
+        </li>
+        <li>
+            Reordering suggestions for customers.
+        </li>
+        <li>
+            For employees/managers of PVFC: forecasting demand for secondary items when a primary item's sales increase. (Inventory Management)
+        </li>
+    </ol>
+
+    <hr>
+    <p><a href="dashboard.html">&larr; Back to Dashboard</a></p>
+</body>
+
+</html>

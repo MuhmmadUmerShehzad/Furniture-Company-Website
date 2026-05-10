@@ -312,6 +312,7 @@
             text-align: center;
         }
     </style>
+
 </head>
 
 <body>
@@ -363,6 +364,7 @@
         <div class="content">
             <h3>Products</h3>
 
+
             <div class="search-row">
                 <asp:TextBox ID="txtSearch" runat="server" placeholder="Search for Products" />
                 <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
@@ -370,74 +372,50 @@
                 <asp:Button ID="btnShowReorder" runat="server" Text="Reorder Suggestions" OnClick="btnShowReorder_Click" />
             </div>
 
-            <!-- Recommendations Section (Moved to Top) -->
             <asp:Panel ID="pnlRecommendations" runat="server" Visible="false" CssClass="recommendations-container">
                 <h3>🔍 Customers who bought this also bought...</h3>
                 <asp:Repeater ID="rptRecommendations" runat="server">
                     <HeaderTemplate>
                         <table class="products-table recommendation-table">
-                            <thead>
-                                <tr>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                    <th>Frequency</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
+                            <thead><tr><th>Description</th><th>Price</th><th>Action</th></tr></thead>
                             <tbody>
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><%# Container.DataItem("description") %></td>
-                            <td>$<%# Container.DataItem("price") %></td>
-                            <td><%# Container.DataItem("freq") %> times</td>
+                            <td><%# Eval("description") %></td>
+                            <td>$<%# Eval("price") %></td>
                             <td>
-                                <asp:Button ID="btnOrderRec" runat="server" Text="Order Now"
-                                    CommandName="Order"
-                                    CommandArgument='<%# Container.DataItem("productId") %>' />
+                                <asp:Button ID="btnOrderRec" runat="server" Text="Order Now" 
+                                    PostBackUrl='<%# "Orders.aspx?ProductID=" & Eval("productId") & "&CustomerID=" & Session("CustomerId") %>' />
                             </td>
                         </tr>
                     </ItemTemplate>
-                    <FooterTemplate>
-                            </tbody>
-                        </table>
-                    </FooterTemplate>
+                    <FooterTemplate></tbody></table></FooterTemplate>
                 </asp:Repeater>
             </asp:Panel>
 
             <asp:Label ID="lblNoRecommendations" runat="server" Visible="false" CssClass="no-data-label"></asp:Label>
 
-            <!-- REORDER SUGGESTIONS PANEL (Moved to Top) -->
+            <!-- REORDER SUGGESTIONS PANEL -->
             <asp:Panel ID="pnlReorder" runat="server" Visible="false" CssClass="recommendations-container reorder-panel">
                 <h3>Previously Ordered Items (Reorder)</h3>
-
-                <asp:Repeater ID="rptReorder" runat="server">
+                <asp:Repeater ID="rptReorders" runat="server">
                     <HeaderTemplate>
                         <table class="products-table reorder-table">
-                            <thead>
-                                <tr>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
+                            <thead><tr><th>Description</th><th>Price</th><th>Action</th></tr></thead>
                             <tbody>
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><%# Container.DataItem("description") %></td>
-                            <td>$<%# Container.DataItem("price") %></td>
+                            <td><%# Eval("description") %></td>
+                            <td>$<%# Eval("price") %></td>
                             <td>
-                                <asp:Button ID="btnReorderItem" runat="server" Text="Order Now"
-                                    CommandName="Order"
-                                    CommandArgument='<%# Container.DataItem("productId") %>' />
+                                <asp:Button ID="btnOrderReorder" runat="server" Text="Order Now" 
+                                    PostBackUrl='<%# "Orders.aspx?ProductID=" & Eval("productId") & "&CustomerID=" & Session("CustomerId") %>' />
                             </td>
                         </tr>
                     </ItemTemplate>
-                    <FooterTemplate>
-                            </tbody>
-                        </table>
-                    </FooterTemplate>
+                    <FooterTemplate></tbody></table></FooterTemplate>
                 </asp:Repeater>
             </asp:Panel>
 

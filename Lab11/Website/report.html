@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 11 Report - Recommendation System</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 40px;">
+    <h1>Lab 11: Code Implementation Report</h1>
+    <p><a href="dashboard.html">Back to Lab 11 Dashboard</a></p>
+    <hr>
+
+    <h2>1. Introduction</h2>
+    <p>
+        In this lab, we integrated a Business Intelligence layer into the Pine Valley Furniture Company (PVFC) system by implementing a Recommendation System. 
+        The system utilizes historical order data to provide personalized product suggestions to customers and demand forecasting insights to management.
+    </p>
+
+    <h2>2. Implementation Details</h2>
+    <p>The implementation focuses on three primary functionalities:</p>
+    <ul>
+        <li>
+            <strong>Product Recommendations ("Customers who bought this also bought"):</strong> 
+            Implemented on the <code>Products.aspx</code> and <code>Orders.aspx</code> pages. 
+            When a user selects a product, the system queries the database to find items frequently purchased together with the selected item using Association Rule Mining principles.
+        </li>
+        <li>
+            <strong>Reordering Suggestions:</strong> 
+            Personalized suggestions for returning customers based on their purchase history, encouraging repeat buys of their favorite or frequently ordered items.
+        </li>
+        <li>
+            <strong>Demand Forecasting (Inventory Management):</strong> 
+            A dedicated <code>DemandForecasting.aspx</code> dashboard for managers. 
+            It analyzes the correlation between "Primary" items (e.g., Dining Tables) and "Secondary" items (e.g., Dining Chairs) to forecast inventory needs when sales of primary items spike.
+        </li>
+    </ul>
+
+    <h2>3. Technical Architecture</h2>
+    <p>
+        The system consists of an ASP.NET Web Forms frontend communicating with a backend SQL Server database. 
+        Complex logic for association rules and forecasting is handled via optimized SQL queries and VB.NET code-behind logic. 
+        We also explored the use of a dedicated Web API (<code>PVFCRecommendationAPI</code>) for decoupling the recommendation engine from the main website logic.
+    </p>
+
+    <h2>4. Design Decisions</h2>
+    <p>
+        We maintained the "Premium" aesthetic of the PVFC website while adding non-intrusive recommendation banners. 
+        The demand forecasting charts provide a clear visual representation of expected vs. actual sales, helping in effective inventory planning.
+    </p>
+
+    <hr>
+    <p><a href="dashboard.html">Back to Lab 11 Dashboard</a></p>
+</body>
+
+</html>

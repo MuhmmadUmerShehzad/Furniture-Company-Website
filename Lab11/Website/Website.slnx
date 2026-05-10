@@ -2,7 +2,7 @@
   <Configurations>
     <BuildType Name="Debug" />
   </Configurations>
-  <Project Path="." Type="Website" DisplayName="Website">
+  <Project Path="." Type="Website" DisplayName="Website" Id="7cd64596-7938-988b-b456-4f5899783bc3">
     <Properties Name="WebsiteProperties">
       <Property Name="Debug.AspNetCompiler.Debug" Value="&quot;True&quot;" />
       <Property Name="Debug.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />

@@ -110,9 +110,6 @@ app.MapGet(
     }
 );
 
-// ============================================================
-// Endpoint 3: Demand forecasting for secondary items (Admin)
-// ============================================================
 app.MapGet(
     "/api/recommendations/forecast/{productId}",
     async (int productId) =>
@@ -158,4 +155,4 @@ app.MapGet(
 );
 
 // Run on port 5001 (won't conflict with your ASPX app)
-app.Run("http://localhost:5001");
+app.Run();

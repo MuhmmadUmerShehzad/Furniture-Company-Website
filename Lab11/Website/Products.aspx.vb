@@ -1,3 +1,5 @@
+
+
 Imports System
 Imports System.Configuration
 Imports System.Data.SqlClient
@@ -9,6 +11,7 @@ Partial Class Products
     Inherits System.Web.UI.Page
 
     Dim connString As String = ConfigurationManager.ConnectionStrings("PVFC").ConnectionString
+    Dim apiBaseUrl As String = ConfigurationManager.AppSettings("ApiBaseUrl")
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 
@@ -93,30 +96,42 @@ Partial Class Products
 
     End Sub
     Protected Sub rptProdcuts_ItemCommand(source As Object, e As RepeaterCommandEventArgs)
-
         If e.CommandName = "Order" Then
             Dim productId As String = e.CommandArgument.ToString()
             Dim customerId As String = Session("CustomerId").ToString()
 
             ' Redirect and pass ProductID and CustomerId in QueryString
             Response.Redirect("Orders.aspx?ProductID=" & productId & "&CustomerID=" & customerId)
+        ElseIf e.CommandName = "ShowRecs" Then
+            LoadRecommendations(Convert.ToInt32(e.CommandArgument))
         End If
-
     End Sub
 
-    ' ============================================================
-    ' NEW: Load Recommendations from the Web API
-    ' ============================================================
     Private Sub LoadRecommendations(ByVal productId As Integer)
         Try
-            Using client As New HttpClient()
-                Dim apiUrl As String = "http://localhost:5001/api/recommendations/alsobought/" & productId
-                Dim response As String = client.GetStringAsync(apiUrl).Result
+            Using conn As New SqlConnection(connString)
+                Dim sql As String = "SELECT TOP 5 P.Product_Id, P.Product_Description, P.Standard_Price, COUNT(*) AS Freq " &
+                                   "FROM Order_line_t OL1 JOIN Order_line_t OL2 ON OL1.Order_Id = OL2.Order_Id " &
+                                   "JOIN PRODUCT_t P ON OL2.Product_Id = P.Product_Id " &
+                                   "WHERE OL1.Product_Id = @pid AND OL2.Product_Id != @pid " &
+                                   "GROUP BY P.Product_Id, P.Product_Description, P.Standard_Price ORDER BY Freq DESC"
+                
+                Dim cmd As New SqlCommand(sql, conn)
+                cmd.Parameters.AddWithValue("@pid", productId)
+                conn.Open()
+                
+                Dim reader As SqlDataReader = cmd.ExecuteReader()
+                Dim recommendations As New List(Of Object)()
+                
+                While reader.Read()
+                    recommendations.Add(New With {
+                        .productId = reader("Product_Id"),
+                        .description = reader("Product_Description"),
+                        .price = reader("Standard_Price")
+                    })
+                End While
 
-                Dim serializer As New JavaScriptSerializer()
-                Dim recommendations = serializer.Deserialize(Of List(Of Dictionary(Of String, Object)))(response)
-
-                If recommendations IsNot Nothing AndAlso recommendations.Count > 0 Then
+                If recommendations.Count > 0 Then
                     rptRecommendations.DataSource = recommendations
                     rptRecommendations.DataBind()
                     pnlRecommendations.Visible = True
@@ -124,47 +139,46 @@ Partial Class Products
                 Else
                     pnlRecommendations.Visible = False
                     lblNoRecommendations.Visible = True
-                    lblNoRecommendations.Text = "No recommendations found for this product yet."
+                    lblNoRecommendations.Text = "No recommendations found for this product."
                 End If
             End Using
         Catch ex As Exception
-            Debug.WriteLine("API Error: " & ex.Message)
-            pnlRecommendations.Visible = False
-            lblNoRecommendations.Visible = True
-            lblNoRecommendations.Text = "Recommendation service unavailable."
         End Try
     End Sub
 
-    ' ============================================================
-    ' NEW: Load Reorder Suggestions for Current Customer
-    ' ============================================================
     Private Sub LoadReorderSuggestions()
+        Dim customerId As Integer = Convert.ToInt32(Session("CustomerId"))
         Try
-            Dim customerId As String = Session("CustomerId").ToString()
+            Using conn As New SqlConnection(connString)
+                Dim sql As String = "SELECT DISTINCT P.Product_Id, P.Product_Description, P.Standard_Price " &
+                                   "FROM ORDER_t O JOIN Order_line_t OL ON O.Order_Id = OL.Order_Id " &
+                                   "JOIN PRODUCT_t P ON OL.Product_Id = P.Product_Id " &
+                                   "WHERE O.Customer_Id = @cid ORDER BY P.Product_Description"
+                
+                Dim cmd As New SqlCommand(sql, conn)
+                cmd.Parameters.AddWithValue("@cid", customerId)
+                conn.Open()
+                
+                Dim reader As SqlDataReader = cmd.ExecuteReader()
+                Dim reorders As New List(Of Object)()
+                
+                While reader.Read()
+                    reorders.Add(New With {
+                        .productId = reader("Product_Id"),
+                        .description = reader("Product_Description"),
+                        .price = reader("Standard_Price")
+                    })
+                End While
 
-            If String.IsNullOrEmpty(customerId) Then
-                Return
-            End If
-
-            Using client As New HttpClient()
-                Dim apiUrl As String = "http://localhost:5001/api/recommendations/reorder/" & customerId
-                Dim response As String = client.GetStringAsync(apiUrl).Result
-
-                Dim serializer As New JavaScriptSerializer()
-                Dim suggestions = serializer.Deserialize(Of List(Of Dictionary(Of String, Object)))(response)
-
-                If suggestions IsNot Nothing AndAlso suggestions.Count > 0 Then
-                    rptReorder.DataSource = suggestions
-                    rptReorder.DataBind()
+                If reorders.Count > 0 Then
+                    rptReorders.DataSource = reorders
+                    rptReorders.DataBind()
                     pnlReorder.Visible = True
                 Else
                     pnlReorder.Visible = False
                 End If
-
             End Using
         Catch ex As Exception
-            Debug.WriteLine("API Error (Reorder): " & ex.Message)
-            pnlReorder.Visible = False
         End Try
     End Sub
 

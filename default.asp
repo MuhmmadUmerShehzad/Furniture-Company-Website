@@ -46,6 +46,12 @@
         <li>
             <strong><a href="Lab06/dashboard.html">Lab 06: Implement User Login | Pine Valley Furniture</a></strong>
         </li>
+        <li>
+            <strong><a href="Lab07/dashboard.html">Lab 07: Customer Segmentation | Pine Valley Furniture</a></strong>
+        </li>
+        <li>
+            <strong><a href="Lab11/Website/dashboard.html">Lab 11: Recommendation System | Pine Valley Furniture</a></strong>
+        </li>
     </ul>
 </body>
 

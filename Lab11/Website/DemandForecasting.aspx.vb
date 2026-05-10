@@ -10,6 +10,7 @@ Partial Class DemandForecasting
     Inherits System.Web.UI.Page
 
     Dim connString As String = ConfigurationManager.ConnectionStrings("PVFC").ConnectionString
+    Dim apiBaseUrl As String = ConfigurationManager.AppSettings("ApiBaseUrl")
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         ' Only admins can access
@@ -42,14 +43,29 @@ Partial Class DemandForecasting
         If productId = 0 Then Return
 
         Try
-            Using client As New HttpClient()
-                Dim apiUrl As String = "http://localhost:5001/api/recommendations/forecast/" & productId
-                Dim response As String = client.GetStringAsync(apiUrl).Result
+            Using conn As New SqlConnection(connString)
+                Dim sql As String = "SELECT P.Product_Id, P.Product_Description, COUNT(*) AS CoCount " &
+                                   "FROM Order_line_t OL1 JOIN Order_line_t OL2 ON OL1.Order_Id = OL2.Order_Id " &
+                                   "JOIN PRODUCT_t P ON OL2.Product_Id = P.Product_Id " &
+                                   "WHERE OL1.Product_Id = @pid AND OL2.Product_Id != @pid " &
+                                   "GROUP BY P.Product_Id, P.Product_Description ORDER BY CoCount DESC"
+                
+                Dim cmd As New SqlCommand(sql, conn)
+                cmd.Parameters.AddWithValue("@pid", productId)
+                conn.Open()
+                
+                Dim reader As SqlDataReader = cmd.ExecuteReader()
+                Dim forecastData As New List(Of Object)()
+                
+                While reader.Read()
+                    forecastData.Add(New With {
+                        .productId = reader("Product_Id"),
+                        .description = reader("Product_Description"),
+                        .coCount = reader("CoCount")
+                    })
+                End While
 
-                Dim serializer As New JavaScriptSerializer()
-                Dim forecastData = serializer.Deserialize(Of List(Of Dictionary(Of String, Object)))(response)
-
-                if forecastData IsNot Nothing AndAlso forecastData.Count > 0 Then
+                If forecastData.Count > 0 Then
                     rptForecast.DataSource = forecastData
                     rptForecast.DataBind()
                     pnlForecastResults.Visible = True
@@ -60,7 +76,7 @@ Partial Class DemandForecasting
                 End If
             End Using
         Catch ex As Exception
-            Debug.WriteLine("Forecast API Error: " & ex.Message)
+            Debug.WriteLine("Forecast Error: " & ex.Message)
             pnlForecastResults.Visible = False
             lblNoData.Text = "Forecasting service currently unavailable."
             lblNoData.Visible = True

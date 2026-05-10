@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PVFCRecommendationAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b21215b65a6eefa02b8100763876df0a2437e2d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d23f96a7d382acfcb84654fb43ecaed12483e40f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PVFCRecommendationAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PVFCRecommendationAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
