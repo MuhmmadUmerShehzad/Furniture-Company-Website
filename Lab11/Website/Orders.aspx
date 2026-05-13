@@ -1,4 +1,4 @@
-<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Orders.aspx.vb" Inherits="Order" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Orders.aspx.vb" Inherits="Order" Async="true" %>
 
     <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -271,7 +271,8 @@
                 color: #ffffff;
             }
 
-            .recommendation-table th, .recommendation-table td {
+            .recommendation-table th,
+            .recommendation-table td {
                 padding: 12px;
                 text-align: left;
                 border-bottom: 1px solid #E2DDD6;
@@ -324,10 +325,12 @@
                     </asp:Panel>
                     <asp:Panel ID="pnlSegmentation" runat="server" Visible="false">
                         <li>
-                            <asp:HyperLink ID="lnkSegmentation" runat="server" NavigateUrl="CustomerSegmentation.aspx" Text="Segmentation" />
+                            <asp:HyperLink ID="lnkSegmentation" runat="server" NavigateUrl="CustomerSegmentation.aspx"
+                                Text="Segmentation" />
                         </li>
                         <li>
-                            <asp:HyperLink ID="lnkForecasting" runat="server" NavigateUrl="DemandForecasting.aspx" Text="Forecasting" />
+                            <asp:HyperLink ID="lnkForecasting" runat="server" NavigateUrl="DemandForecasting.aspx"
+                                Text="Forecasting" />
                         </li>
                     </asp:Panel>
                     <li>
@@ -384,9 +387,14 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><%# Container.DataItem("description") %></td>
-                                <td>$<%# Container.DataItem("price") %></td>
-                                <td><%# Container.DataItem("freq") %> times</td>
+                                <td>
+                                    <%# Container.DataItem("description") %>
+                                </td>
+                                <td>$<%# Container.DataItem("price") %>
+                                </td>
+                                <td>
+                                    <%# Container.DataItem("freq") %> times
+                                </td>
                                 <td>
                                     <asp:Button ID="btnOrderRec" runat="server" Text="Order Now"
                                         PostBackUrl='<%# "Orders.aspx?ProductID=" & Container.DataItem("productId") & "&CustomerID=" & Session("CustomerId") %>' />
@@ -394,12 +402,13 @@
                             </tr>
                         </ItemTemplate>
                         <FooterTemplate>
-                                </tbody>
+                            </tbody>
                             </table>
                         </FooterTemplate>
                     </asp:Repeater>
                 </asp:Panel>
-                <asp:Label ID="lblNoRecommendations" runat="server" Visible="false" CssClass="no-data-label"></asp:Label>
+                <asp:Label ID="lblNoRecommendations" runat="server" Visible="false" CssClass="no-data-label">
+                </asp:Label>
             </div>
 
         </form>

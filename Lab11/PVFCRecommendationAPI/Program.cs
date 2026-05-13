@@ -16,9 +16,7 @@ app.UseCors();
 
 var connString = builder.Configuration.GetConnectionString("PVFC");
 
-// ============================================================
 // Endpoint 1: "Customers who bought this also bought..."
-// ============================================================
 app.MapGet(
     "/api/recommendations/alsobought/{productId}",
     async (int productId) =>
@@ -65,9 +63,7 @@ app.MapGet(
     }
 );
 
-// ============================================================
 // Endpoint 2: Reorder suggestions for a customer
-// ============================================================
 app.MapGet(
     "/api/recommendations/reorder/{customerId}",
     async (int customerId) =>
@@ -154,5 +150,4 @@ app.MapGet(
     }
 );
 
-// Run on port 5001 (won't conflict with your ASPX app)
 app.Run();

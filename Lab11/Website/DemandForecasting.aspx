@@ -1,4 +1,4 @@
-<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DemandForecasting.aspx.vb" Inherits="DemandForecasting" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="DemandForecasting.aspx.vb" Inherits="DemandForecasting" Async="true" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

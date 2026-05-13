@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 Imports System.Diagnostics
 Imports System.Net.Http
 Imports System.Web.Script.Serialization
+Imports System.Threading.Tasks
 
 Partial Class DemandForecasting
     Inherits System.Web.UI.Page
@@ -38,41 +39,31 @@ Partial Class DemandForecasting
         End Using
     End Sub
 
-    Protected Sub btnForecast_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Protected Async Sub btnForecast_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim productId As Integer = Convert.ToInt32(ddlPrimaryProduct.SelectedValue)
         If productId = 0 Then Return
 
         Try
-            Using conn As New SqlConnection(connString)
-                Dim sql As String = "SELECT P.Product_Id, P.Product_Description, COUNT(*) AS CoCount " &
-                                   "FROM Order_line_t OL1 JOIN Order_line_t OL2 ON OL1.Order_Id = OL2.Order_Id " &
-                                   "JOIN PRODUCT_t P ON OL2.Product_Id = P.Product_Id " &
-                                   "WHERE OL1.Product_Id = @pid AND OL2.Product_Id != @pid " &
-                                   "GROUP BY P.Product_Id, P.Product_Description ORDER BY CoCount DESC"
-                
-                Dim cmd As New SqlCommand(sql, conn)
-                cmd.Parameters.AddWithValue("@pid", productId)
-                conn.Open()
-                
-                Dim reader As SqlDataReader = cmd.ExecuteReader()
-                Dim forecastData As New List(Of Object)()
-                
-                While reader.Read()
-                    forecastData.Add(New With {
-                        .productId = reader("Product_Id"),
-                        .description = reader("Product_Description"),
-                        .coCount = reader("CoCount")
-                    })
-                End While
+            Using client As New HttpClient()
+                Dim url As String = apiBaseUrl & "forecast/" & productId
+                Dim response = Await client.GetAsync(url)
 
-                If forecastData.Count > 0 Then
-                    rptForecast.DataSource = forecastData
-                    rptForecast.DataBind()
-                    pnlForecastResults.Visible = True
-                    lblNoData.Visible = False
+                If response.IsSuccessStatusCode Then
+                    Dim json As String = Await response.Content.ReadAsStringAsync()
+                    Dim serializer As New JavaScriptSerializer()
+                    Dim forecastData = serializer.Deserialize(Of List(Of Object))(json)
+
+                    If forecastData IsNot Nothing AndAlso forecastData.Count > 0 Then
+                        rptForecast.DataSource = forecastData
+                        rptForecast.DataBind()
+                        pnlForecastResults.Visible = True
+                        lblNoData.Visible = False
+                    Else
+                        pnlForecastResults.Visible = False
+                        lblNoData.Visible = True
+                    End If
                 Else
-                    pnlForecastResults.Visible = False
-                    lblNoData.Visible = True
+                    Throw New Exception("API Error: " & response.StatusCode.ToString())
                 End If
             End Using
         Catch ex As Exception

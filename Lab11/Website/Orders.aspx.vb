@@ -4,6 +4,7 @@ Imports System.Diagnostics
 Imports System.Data
 Imports System.Net.Http
 Imports System.Web.Script.Serialization
+Imports System.Threading.Tasks
 
 Partial Class Order
     Inherits System.Web.UI.Page
@@ -11,7 +12,7 @@ Partial Class Order
     Dim connString As String = ConfigurationManager.ConnectionStrings("PVFC").ConnectionString
     Dim apiBaseUrl As String = ConfigurationManager.AppSettings("ApiBaseUrl")
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+    Protected Async Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 
         If Session("DbUser") Is Nothing Then
             Response.Redirect("Login.aspx")
@@ -48,7 +49,7 @@ Partial Class Order
             Dim productId As Integer
             If Integer.TryParse(Request.QueryString("ProductID"), productId) Then
                 LoadProductName(productId)
-                LoadRecommendations(productId)
+                Await LoadRecommendations(productId)
             End If
         End If
     End Sub
@@ -146,46 +147,33 @@ Partial Class Order
         End Using
     End Sub
 
-    Private Sub LoadRecommendations(ByVal productId As Integer)
+    Private Async Function LoadRecommendations(ByVal productId As Integer) As Task
         Try
-            Using conn As New SqlConnection(connString)
-                Dim sql As String = "SELECT TOP 5 P.Product_Id, P.Product_Description, P.Standard_Price, COUNT(*) AS Freq " &
-                                   "FROM Order_line_t OL1 JOIN Order_line_t OL2 ON OL1.Order_Id = OL2.Order_Id " &
-                                   "JOIN PRODUCT_t P ON OL2.Product_Id = P.Product_Id " &
-                                   "WHERE OL1.Product_Id = @pid AND OL2.Product_Id != @pid " &
-                                   "GROUP BY P.Product_Id, P.Product_Description, P.Standard_Price ORDER BY Freq DESC"
-                
-                Dim cmd As New SqlCommand(sql, conn)
-                cmd.Parameters.AddWithValue("@pid", productId)
-                conn.Open()
-                
-                Dim reader As SqlDataReader = cmd.ExecuteReader()
-                Dim recommendations As New List(Of Object)()
-                
-                While reader.Read()
-                    recommendations.Add(New With {
-                        .productId = reader("Product_Id"),
-                        .description = reader("Product_Description"),
-                        .price = reader("Standard_Price"),
-                        .freq = reader("Freq")
-                    })
-                End While
+            Using client As New HttpClient()
+                Dim url As String = apiBaseUrl & "alsobought/" & productId
+                Dim response = Await client.GetAsync(url)
 
-                If recommendations.Count > 0 Then
-                    rptRecommendations.DataSource = recommendations
-                    rptRecommendations.DataBind()
-                    pnlRecommendations.Visible = True
-                    lblNoRecommendations.Visible = False
-                Else
-                    pnlRecommendations.Visible = False
-                    lblNoRecommendations.Visible = True
-                    lblNoRecommendations.Text = "No additional recommendations for this product."
+                If response.IsSuccessStatusCode Then
+                    Dim json As String = Await response.Content.ReadAsStringAsync()
+                    Dim serializer As New JavaScriptSerializer()
+                    Dim recommendations = serializer.Deserialize(Of List(Of Object))(json)
+
+                    If recommendations IsNot Nothing AndAlso recommendations.Count > 0 Then
+                        rptRecommendations.DataSource = recommendations
+                        rptRecommendations.DataBind()
+                        pnlRecommendations.Visible = True
+                        lblNoRecommendations.Visible = False
+                    Else
+                        pnlRecommendations.Visible = False
+                        lblNoRecommendations.Visible = True
+                        lblNoRecommendations.Text = "No additional recommendations for this product."
+                    End If
                 End If
             End Using
         Catch ex As Exception
             Debug.WriteLine("Recommendation Error: " & ex.Message)
             pnlRecommendations.Visible = False
         End Try
-    End Sub
+    End Function
 
 End Class

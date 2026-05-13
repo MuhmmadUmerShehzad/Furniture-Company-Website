@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7CD64596-7938-988B-B456-4F5899783BC3}|D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website|d:\\coding\\iad_github\\furniture-company-website\\lab11\\website\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{7CD64596-7938-988B-B456-4F5899783BC3}|D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{7CD64596-7938-988B-B456-4F5899783BC3}|D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website|d:\\coding\\iad_github\\furniture-company-website\\lab11\\website\\products.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{7CD64596-7938-988B-B456-4F5899783BC3}|D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website|solutionrelative:products.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website\\Login.aspx",
-              "RelativeDocumentMoniker": "Login.aspx",
-              "ToolTip": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website\\Login.aspx",
-              "RelativeToolTip": "Login.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-05-04T03:34:34.005Z",
+              "Title": "Products.aspx.vb",
+              "DocumentMoniker": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website\\Products.aspx.vb",
+              "RelativeDocumentMoniker": "Products.aspx.vb",
+              "ToolTip": "D:\\Coding\\IAD_github\\Furniture-Company-Website\\Lab11\\Website\\Products.aspx.vb",
+              "RelativeToolTip": "Products.aspx.vb",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAmwJoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-11T03:26:11.429Z",
               "EditorCaption": ""
             }
           ]
